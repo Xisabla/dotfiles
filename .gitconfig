@@ -1,0 +1,25 @@
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[user]
+        name = Gautier Miquet
+        email = xisabla.dev@gmail.com
+[core]
+        editor = vim
+[color]
+        ui = always
+        diff = always
+
+[url "git@github.com:"]
+        insteadOf = "gh:"
+        pushInsteadOf = "gh:"
+
+[url "git@gist.github.com:"]
+        insteadOf = "gist:"
+        pushInsteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+        insteadOf = "gl:"
+        pushInsteadOf = "gl:"
