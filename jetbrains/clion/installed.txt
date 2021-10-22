@@ -1,0 +1,14 @@
+PlantUML integration
+String Manipulation
+com.intellij.ideolog
+intellij.prettierJS
+izhangzhihao.rainbow.brackets
+lermitage.intellij.extra.icons
+mobi.hsz.idea.gitignore
+net.seesharpsoft.intellij.plugins.csv
+org.editorconfig.editorconfigjetbrains
+org.jetbrains.plugins.rest
+org.toml.lang
+ru.adelf.idea.dotenv
+ski.chrzanow.foldableprojectview
+zielu.gittoolbox
