@@ -9,6 +9,7 @@
         email = xisabla.dev@gmail.com
 
 [core]
+        autocrlf = true
         editor = vim
 
 [color]
