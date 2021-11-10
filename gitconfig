@@ -8,9 +8,10 @@
         name = Gautier Miquet
         email = xisabla.dev@gmail.com
 
-[core]
-        autocrlf = true
+ [core]
+        autocrlf = false
         editor = vim
+        eol = lf
 
 [color]
         ui = always
