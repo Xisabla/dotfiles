@@ -10,7 +10,7 @@ export ZSH="/home/gautier/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(direnv git rsync)
+plugins=(direnv git history rsync zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -22,15 +22,39 @@ autoload -U compinit
 compinit
 
 # User configuration
+export PATH="/home/gautier/.bin:$PATH"
+
 alias nano="vim"
 
 # Defaults
 export EDITOR=vim
 
-# power10k
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Sources
+[[ ! -f ~/.p10k.zsh ]]          || source ~/.p10k.zsh       # power10k
+[[ ! -f ~/.oc_completion ]]     || source ~/.oc_completion  # working with oc
+[[ ! -f ~/.tools/proxy.sh ]]    || source ~/.tools/proxy.sh # custom proxy tool
+
+# SSH
+if [[ -f "$HOME/.ssh/wsl2-ssh-pageant.exe" ]]; then         # see: https://github.com/BlackReloaded/wsl2-ssh-pageant
+    export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
+
+    if ! ss -a | grep -q "$SSH_AUTH_SOCK"; then
+        rm -f "$SSH_AUTH_SOCK"
+        wsl2_ssh_pageant_bin="$HOME/.ssh/wsl2-ssh-pageant.exe"
+        if test -x "$wsl2_ssh_pageant_bin"; then
+            (setsid nohup socat UNIX-LISTEN:"$SSH_AUTH_SOCK,fork" EXEC:"$wsl2_ssh_pageant_bin" >/dev/null 2>&1 &)
+        else
+            echo >&2 "WARNING: $wsl2_ssh_pageant_bin is not executable."
+        fi
+        unset wsl2_ssh_pageant_bin
+    fi
+fi
+
+eval `ssh-agent`
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [[ -f "$HOME/.nvm" ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+fi
