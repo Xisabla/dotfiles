@@ -1,5 +1,7 @@
 # dotfiles
 
+## Ubuntu / Debian
+
 ```bash
 cd ~
 
@@ -10,9 +12,12 @@ sudo apt dist-upgrade -y
 sudo apt install -y \
     build-essential \
     cmake \
+    curl \
+    git \
     openssh-client \
     vim \
     zsh
+sudo apt autoremove -y
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -20,10 +25,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/Xisabla/dotfiles
 
 cd dotfiles && \
-	git submodule update --init --recursive && \
+    git submodule update --init --recursive && \
     cd ../
 
 cp dotfiles/.oh-my-zsh/ -R ~/
+cp dotfiles/.ssh/ -R ~/
+
 cp dotfiles/gitconfig ~/.gitconfig
 cp dotfiles/.p10k.zsh ~/.
 cp dotfiles/.vimrc ~/.
