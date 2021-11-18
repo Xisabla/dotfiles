@@ -22,8 +22,16 @@ autoload -U compinit
 compinit
 
 # User configuration
+if which tmux 2>&1 >/dev/null; then                         # use tmux
+    if [ "$TMUX" = "" ] && [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+        tmux attach -t terminal || tmux new -s terminal; exit
+    fi
+fi
+
+
 export PATH="/home/gautier/.bin:$PATH"
 
+alias glow="glow -p"
 alias nano="vim"
 
 # Defaults

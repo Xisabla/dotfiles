@@ -15,6 +15,7 @@ sudo apt install -y \
     curl \
     git \
     openssh-client \
+    tmux \
     vim \
     zsh
 sudo apt autoremove -y
@@ -70,6 +71,7 @@ sudo dnf install -y \
     curl \
     git \
     openssh-clients \
+    tmux \
     vim \
     zsh
 sudo dnf groupinstall 'Development Tools' -y
