@@ -22,8 +22,15 @@ autoload -U compinit
 compinit
 
 # User configuration
-export PATH="/home/gautier/.bin:$PATH"
+if which tmux 2>&1 >/dev/null; then                         # use tmux by default
+    if [ ! "$USER" = "notmux" ] && [ "$TMUX" = "" ] && [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+        tmux attach -t terminal || tmux new -s terminal; exit
+    fi
+fi
 
+[[ -d "$HOME/.bin" ]] && export PATH="$PATH:$HOME/.bin"
+
+alias glow="glow -p"
 alias nano="vim"
 
 # Defaults
@@ -53,7 +60,7 @@ fi
 eval `ssh-agent`
 
 # nvm
-if [[ -f "$HOME/.nvm" ]]; then
+if [ -d "$HOME/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
