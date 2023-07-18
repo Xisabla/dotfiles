@@ -1,0 +1,81 @@
+{
+  "workbench.colorTheme": "Atom One Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light Colorblind (Beta)",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editorAssociations": {
+    "*.pdf": "pdf.preview"
+  },
+  "workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "diffEditor.wordWrap": "off",
+  "editor.wordWrap": "off",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.indentation": false,
+  "editor.inlayHints.enabled": "on",
+  "editor.inlineSuggest.enabled": true,
+  "editor.renderWhitespace": "all",
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "files.trimFinalNewlines": false,
+  "files.trimTrailingWhitespace": true,
+  "blockman.n01LineHeight": 0,
+  "blockman.n04ColorComboPreset": "Classic Light (Gradients)",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
+  },
+  "github.gitProtocol": "ssh",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm",
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.telemetry.enabled": false,
+  "doxdocgen.generic.authorName": "Gautier Miquet",
+  "doxdocgen.generic.authorEmail": "xisabla.dev@gmail.com",
+  "doxdocgen.file.copyrightTag": ["@copyright MIT License"],
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "[markdown]": {
+    "editor.indentSize": 2,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "cSpell.fixSpellingWithRenameProvider": true,
+    "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+    "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
+  },
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintPath": "pylint",
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "yapf",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "clangd.detectExtensionConflicts": false,
+  "[c][h][cpp][hpp]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json][jsonc]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

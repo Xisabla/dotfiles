@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+
+set -x
+set -e
+set -u
+
+# Install nvm
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Install node
+
+nvm install --lts
+nvm use node
+
+node --version
+npm --version
+
+# Install and update npm packages
+
+npm i -g npm
+npm i -g yarn
+npm i -g ts-node
+
+yarn --version
+ts-node --version
+
+exit 0

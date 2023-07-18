@@ -1,0 +1,10 @@
+[Appearance]
+Skin=breeze-minimal
+SkinInstalledWithKns=true
+
+[Dialogs]
+FirstRun=false
+
+[Window]
+Height=56
+Width=100
