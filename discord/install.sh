@@ -16,4 +16,3 @@ rm discord.deb
 
 timeout 1 discord
 
-[[ $? -eq 124 ]] && exit 0 || exit 1

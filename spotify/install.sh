@@ -14,4 +14,3 @@ sudo apt install spotify-client
 
 spotify --version
 
-exit 0

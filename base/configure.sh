@@ -9,7 +9,7 @@ set -u
 
 cp -R -f .config "$HOME/.config"
 
-cp -R -f .bin "$HOME/.bin"
+# cp -R -f .bin "$HOME/.bin"
 cp -R -f .tools "$HOME/.tools"
 
 cp -f .p10k.zsh "$HOME/.p10k.zsh"
@@ -28,4 +28,3 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 sudo update-alternatives --auto python
 
-exit 0

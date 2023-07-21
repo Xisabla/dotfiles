@@ -19,4 +19,3 @@ sudo apt install code
 
 code --version
 
-exit 0

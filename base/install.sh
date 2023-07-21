@@ -35,4 +35,3 @@ sudo apt autoremove -y
 
 [[ ! -d "$HOME/.fzf" ]]                                                 && git clone https://github.com/junegunn/fzf.git "$HOME/.fzf"
 
-exit 0

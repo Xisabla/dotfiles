@@ -13,4 +13,3 @@ cp -f "$HOME/.config/Code/User/settings.json" vscode/settings.json
 
 code --list-extensions | uniq | sort > vscode/extensions.txt
 
-exit 0

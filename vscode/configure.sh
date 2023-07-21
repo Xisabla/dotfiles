@@ -17,4 +17,3 @@ done < vscode/extensions.txt
 
 cp -f vscode/settings.json "$HOME/.config/Code/User/settings.json"
 
-exit 0

@@ -29,4 +29,3 @@ npm i -g ts-node
 yarn --version
 ts-node --version
 
-exit 0

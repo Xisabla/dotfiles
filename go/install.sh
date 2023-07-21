@@ -20,4 +20,3 @@ rm go1.20.5.linux-amd64.tar.gz
 
 go version
 
-exit 0

@@ -15,4 +15,3 @@ cargo --version
 rustc --version
 rustup --version
 
-exit 0

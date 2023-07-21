@@ -14,4 +14,3 @@ sudo apt install brave-browser
 
 brave-browser --version
 
-exit 0
