@@ -46,6 +46,9 @@ alias xclip="xclip -selection clipboard"
 alias ssh="TERM=xterm ssh"
 alias vim="nvim"
 
+alias dev="cd ~/Dev"
+alias shared="cd ~/Shared"
+
 # - Exports
 export CC="clang"
 export CCX="clang++"
