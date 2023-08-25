@@ -3,7 +3,6 @@ akamud.vscode-theme-onedark
 akamud.vscode-theme-onelight
 alefragnani.Bookmarks
 amiralizadeh9480.cpp-helper
-bungcip.better-toml
 chouzz.vscode-better-align
 christian-kohler.npm-intellisense
 christian-kohler.path-intellisense
@@ -24,11 +23,9 @@ formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
 formulahendry.code-runner
 fredwangwang.vscode-hcl-format
-GitHub.codespaces
 GitHub.copilot
 GitHub.github-vscode-theme
 GitHub.remotehub
-github.vscode-github-actions
 GitHub.vscode-pull-request-github
 Gruntfuggly.todo-tree
 hashicorp.hcl
@@ -48,6 +45,7 @@ meganrogge.template-string-converter
 mikestead.dotenv
 mindaro-dev.file-downloader
 ms-azuretools.vscode-docker
+ms-python.black-formatter
 ms-python.isort
 ms-python.pylint
 ms-python.python
@@ -57,17 +55,19 @@ ms-vscode.cpptools
 ms-vscode.cpptools-themes
 ms-vscode.hexeditor
 ms-vscode.remote-explorer
+ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode.remote-repositories
 ms-vscode.test-adapter-converter
 ms-vsliveshare.vsliveshare
 mtxr.sqltools
-mtxr.sqltools-driver-mysql
+naumovs.color-highlight
 nickdemayo.vscode-json-editor
 njpwerner.autodocstring
 PeterSchmalfeldt.explorer-exclude
 pranaygp.vscode-css-peek
+Prisma.prisma
 quicktype.quicktype
 redhat.vscode-xml
 redhat.vscode-yaml
@@ -78,6 +78,8 @@ smcpeak.default-keys-windows
 SonarSource.sonarlint-vscode
 streetsidesoftware.code-spell-checker
 stylelint.vscode-stylelint
+tamasfe.even-better-toml
+techer.open-in-browser
 timonwong.shellcheck
 tomoki1207.pdf
 usernamehw.errorlens
@@ -89,3 +91,4 @@ vscode-icons-team.vscode-icons
 WakaTime.vscode-wakatime
 wayou.vscode-todo-highlight
 xaver.clang-format
+yzhang.markdown-all-in-one
