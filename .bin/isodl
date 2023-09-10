@@ -1,0 +1,157 @@
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+
+#
+# A linux tool to download files and perform checks, initially thought as a tool to download ISO files and
+# perform checksums and sign checks.
+#
+# The config json file is composed as such:
+#
+# {
+#   "downloads": [
+#     "http://url/of/file/to/download",
+#   ],
+#   "checks": [
+#     "check_command_to_perform",
+#   ]
+# }
+#
+# There is no name mapping
+#
+# Example:
+#
+# {
+#   "downloads": [
+#     "https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.img.xz",
+#     "https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.img.xz.sha1",
+#     "https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.img.xz.sha256",
+#     "https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.img.xz.sig",
+#     "https://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03/2023-05-03-raspios-bullseye-armhf-lite.info"
+#   ],
+#   "checks": [
+#     "sha1sum -c ./2023-05-03-raspios-bullseye-armhf-lite.img.xz.sha1",
+#     "sha256sum -c ./2023-05-03-raspios-bullseye-armhf-lite.img.xz.sha256",
+#     "gpg --verify 2023-05-03-raspios-bullseye-armhf-lite.img.xz.sig"
+#   ]
+# }
+#
+# This config will download raspios armhf and perform sha1sum, sha256 and gpg check
+
+#
+# Copyright (c) 2023 MIQUET Gautier
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+
+
+# Set the '-u' option to treat unset variables as errors
+set -u
+
+ISODL_VERSION="1.0.0"
+
+# Default configuration file
+CONFIG_FILE="download.json"
+
+# Function to display script usage
+function usage() {
+    echo "Usage: isodl [config_file | -h | --help | -v | --version]"
+    echo "Description: This script automates the process of downloading files specified in a configuration file,"
+    echo "             performing integrity checks, and reporting the results."
+    echo "Options:"
+    echo "  config_file    JSON Config file to use."
+    echo ""
+    echo "  -h, --help     Display this usage information and exit."
+    echo "  -v, --verison  Display the current version of the program and exit."
+    echo ""
+}
+
+function version() {
+    echo "isodl v$ISODL_VERSION"
+}
+
+# Function to download the files
+function download() {
+    # Loop through downloads and download files
+    jq -r '.downloads[]' "$CONFIG_FILE" | while read -r url; do
+        filename=$(basename "$url")
+        echo ">> Downloading $filename..."
+
+        if ! curl -o "$filename" "$url"; then
+            echo "Error downloading $filename"
+            exit 1
+        fi
+    done
+}
+
+# Function to perform checks
+function check() {
+    echo "> Running checks..."
+
+    # Loop through checks and run checks
+    jq -r '.checks[]' "$CONFIG_FILE" | while read -r check_command; do
+        echo ">> Running: $check_command..."
+
+        if ! eval "$check_command"; then
+            return 1
+        fi
+    done
+}
+
+# Check if there are more arguments than necessary
+if [ $# -gt 1 ]; then
+    usage
+    exit 1
+fi
+
+# Check if a config file argument is provided
+if [ $# -eq 1 ]; then
+    if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+        usage
+        exit 0
+    fi
+    if [ "$1" == "-v" ] || [ "$1" == "--version" ]; then
+        version
+        exit 0
+    fi
+
+    CONFIG_FILE=$1
+fi
+
+# Check if the config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+  echo "Config file not found: $CONFIG_FILE"
+  exit 1
+fi
+
+# Process
+
+if ! check; then
+    echo "> Initial check failed, downloading files..."
+
+    download
+
+    echo "> Re-running checks..."
+
+    if ! check; then
+        echo "! Final checks failed, something went wrong !"
+        exit 1
+    fi
+fi
+
+echo "> OK"

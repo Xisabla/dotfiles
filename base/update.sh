@@ -27,7 +27,7 @@ cp -f "$HOME/.local/share/user-places.xbel" .local/share
 
 ## Others
 
-# cp -R -f "$HOME/.bin" .
+cp -R -f "$HOME/.bin" .
 cp -R -f "$HOME/.tools" .
 
 cp -f "$HOME/.p10k.zsh" .
