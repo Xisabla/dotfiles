@@ -50,13 +50,17 @@ alias dev="cd ~/Dev"
 alias shared="cd ~/Shared"
 
 # - Exports
+
 export CC="clang"
 export CCX="clang++"
 
-export NVM_DIR="$HOME/.nvm"
-
 export EDITOR="vim"
 export GPG_TTY=$(tty)
+
+export ARA_API_CLIENT="http"
+export ARA_API_SERVER="http://127.0.0.1:10001"
+
+export NVM_DIR="$HOME/.nvm"
 
 # - Others
 eval `ssh-agent`

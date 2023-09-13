@@ -39,9 +39,10 @@
 
   "github.gitProtocol": "ssh",
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
-    "markdown": true
+    "markdown": true,
+    "scminput": false
   },
   "gitlens.defaultDateFormat": "MMMM Do, YYYY HH:mm",
   "gitlens.defaultTimeFormat": "HH:mm",

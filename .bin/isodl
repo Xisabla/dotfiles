@@ -92,7 +92,7 @@ function download() {
         filename=$(basename "$url")
         echo ">> Downloading $filename..."
 
-        if ! curl -o "$filename" "$url"; then
+        if ! curl -o "$filename" -fsLOR "$url"; then
             echo "Error downloading $filename"
             exit 1
         fi

@@ -33,6 +33,7 @@ hbenl.vscode-test-explorer
 humao.rest-client
 IBM.output-colorizer
 idleberg.icon-fonts
+IJustDev.gitea-vscode
 jeff-hykin.better-cpp-syntax
 jeff-hykin.better-shellscript-syntax
 karyfoundation.comment
@@ -69,6 +70,7 @@ PeterSchmalfeldt.explorer-exclude
 pranaygp.vscode-css-peek
 Prisma.prisma
 quicktype.quicktype
+redhat.ansible
 redhat.vscode-xml
 redhat.vscode-yaml
 Remisa.shellman
@@ -90,5 +92,6 @@ VisualStudioExptTeam.vscodeintellicode-completions
 vscode-icons-team.vscode-icons
 WakaTime.vscode-wakatime
 wayou.vscode-todo-highlight
+wolfmah.ansible-vault-inline
 xaver.clang-format
 yzhang.markdown-all-in-one
