@@ -24,6 +24,7 @@ formulahendry.auto-rename-tag
 formulahendry.code-runner
 fredwangwang.vscode-hcl-format
 GitHub.copilot
+GitHub.copilot-chat
 GitHub.github-vscode-theme
 GitHub.remotehub
 GitHub.vscode-pull-request-github
@@ -66,6 +67,7 @@ mtxr.sqltools
 naumovs.color-highlight
 nickdemayo.vscode-json-editor
 njpwerner.autodocstring
+oven.bun-vscode
 PeterSchmalfeldt.explorer-exclude
 pranaygp.vscode-css-peek
 Prisma.prisma
@@ -84,6 +86,7 @@ tamasfe.even-better-toml
 techer.open-in-browser
 timonwong.shellcheck
 tomoki1207.pdf
+ultram4rine.vscode-choosealicense
 usernamehw.errorlens
 vincaslt.highlight-matching-tag
 VisualStudioExptTeam.intellicode-api-usage-examples

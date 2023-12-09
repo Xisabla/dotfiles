@@ -54,7 +54,16 @@
   "explorer.confirmDragAndDrop": false,
 
   "cSpell.language": "en",
-  "cSpell.userWords": ["browsersync", "middlewares"],
+  "cSpell.userWords": [
+    "browsersync",
+    "gitea",
+    "hostvars",
+    "middlewares",
+    "pipefail",
+    "proto",
+    "scrollmaster",
+    "techodyssey"
+  ],
 
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
@@ -105,5 +114,11 @@
 
   "[css][scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
-  }
+  },
+  "license.author": "Gautier Miquet",
+  "license.default": "MIT",
+  "gitea.instanceURL": "https://scrollmaster.techodyssey.io/",
+  "gitea.owner": "xisabla",
+  "gitea.repo": "SiegeEngineer",
+  "gitea.sslVerify": false
 }

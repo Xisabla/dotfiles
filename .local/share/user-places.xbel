@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xbel>
-<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:kdepriv="http://www.kde.org/kdepriv" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info">
+<xbel xmlns:kdepriv="http://www.kde.org/kdepriv" xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info">
  <info>
   <metadata owner="http://www.kde.org">
    <kde_places_version>4</kde_places_version>
@@ -132,6 +132,19 @@
    </metadata>
   </info>
  </bookmark>
+ <bookmark href="file:///home/xisabla/Shared">
+  <title>Shared</title>
+  <info>
+   <metadata owner="http://freedesktop.org">
+    <bookmark:icon name="inode-directory"/>
+   </metadata>
+   <metadata owner="http://www.kde.org">
+    <ID>1688312835/1</ID>
+    <isSystemItem>false</isSystemItem>
+    <IsHidden>false</IsHidden>
+   </metadata>
+  </info>
+ </bookmark>
  <bookmark href="file:///home/xisabla/Dev">
   <title>Dev</title>
   <info>
@@ -145,14 +158,14 @@
    </metadata>
   </info>
  </bookmark>
- <bookmark href="file:///home/xisabla/Shared">
-  <title>Shared</title>
+ <bookmark href="file:///home/xisabla/Projects">
+  <title>Projects</title>
   <info>
    <metadata owner="http://freedesktop.org">
     <bookmark:icon name="inode-directory"/>
    </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1688312835/1</ID>
+    <ID>1701115551/0</ID>
     <isSystemItem>false</isSystemItem>
     <IsHidden>false</IsHidden>
    </metadata>
@@ -296,15 +309,29 @@
    </metadata>
   </info>
  </separator>
- <bookmark href="kdeconnect://b090931c7a1294fe/">
-  <title>Pixel 4A (5G)</title>
+ <separator>
   <info>
-   <metadata owner="http://freedesktop.org">
-    <bookmark:icon name="kdeconnect"/>
-   </metadata>
    <metadata owner="http://www.kde.org">
-    <ID>1692868639/0</ID>
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:01.3/0000:03:00.0/usb1/1-1/1-1.1</UDI>
+    <isSystemItem>true</isSystemItem>
    </metadata>
   </info>
- </bookmark>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/fstab/fuse.sshfs/run/user/1000/b090931c7a1294fe</UDI>
+    <isSystemItem>true</isSystemItem>
+    <IsHidden>true</IsHidden>
+   </metadata>
+  </info>
+ </separator>
+ <separator>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <UDI>/org/kde/solid/udev/sys/devices/pci0000:00/0000:00:01.3/0000:03:00.0/usb1/1-9</UDI>
+    <isSystemItem>true</isSystemItem>
+   </metadata>
+  </info>
+ </separator>
 </xbel>
